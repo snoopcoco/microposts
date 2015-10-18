@@ -29,6 +29,9 @@ module Microposts
       g.helper false
       g.test_framework false
       #テストコードとJavaScript、CSS(SCSS)、ヘルパのファイルを自動生成しないため
+      
+      config.action_view.embed_authenticity_token_in_remote_forms = true
+      #Ajaxでリクエストを送信する際にデータを安全にやりとりするためにトークンという文字列を付与
     end
   end
 end
