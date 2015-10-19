@@ -7,7 +7,8 @@ class UsersController < ApplicationController
   def update
     if @user.update(user_params)
       # 保存に成功した場合はトップページへリダイレクト
-      redirect_to @user, notice: 'Edit your profile' #flashとnoticeの違い
+      redirect_to @user #notice: 'Edit your profile' #flashとnoticeの違い
+      flash[:success] = "Edit your profile!"
     else
       # 保存に失敗した場合は編集画面へ戻す
       render 'edit'
