@@ -9,12 +9,11 @@
   </aside>
   <div class="col-md-8">
     <h2><%= @title %> (<%= @followings.count %>)</h2>
-    <ol class="followings">
-      <li><% @followings.each do |a| %>
-        <%= gravatar_for(a, size:50) %> 
-        <%= link_to a.name, user_path(a) %> <%#なぜ(a)でいくの? %>
-      </li>
-    <% end %>
+      <% @followings.each do |a| %>
+      <ol>
+        <li class="follow"><%= gravatar_for(a, size:50) %>
+        <%= link_to a.name, user_path(a) %></li>
     </ol>
+    <% end %>
   </div>
 </div>
